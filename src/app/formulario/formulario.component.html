@@ -1,0 +1,24 @@
+<form>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="inputEmail4">Codigo</label>
+            <input type="number" class="form-control" placeholder="digite el código del estudiante" [(ngModel)]="codigo" name="codigo">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputPassword4">Nombre</label>
+            <input type="text" class="form-control" placeholder="digite el Nombre" [(ngModel)]="nombre" name="nombre">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputPassword4">Apellido</label>
+            <input type="text" class="form-control" placeholder="digite el Apellido" [(ngModel)]="apellido" name="apellido">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputPassword4">Nota</label>
+            <input type="number" class="form-control" placeholder="digite la nota" [(ngModel)]="nota" name="nota">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="onAgregarEstudiante()">Agregar</button>
+</form>

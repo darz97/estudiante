@@ -9,7 +9,7 @@ import { Estudiante } from './estudiante';
 export class AppComponent {
 
 
-  titulo = 'Bienvenido, esta son las notas del estudiante: ';
+  titulo = 'Bienvenido';
 
   estudiantes: Estudiante [ ] = [
     { codigo: 1, nombre: 'Diego' , apellido: 'Ramirez', nota: 5},
@@ -31,6 +31,10 @@ export class AppComponent {
       } else {
         return this.observacion = 'Aprobo';
       }
+  }
 
+  onEstudianteAgregada(estudiante:Estudiante){
+
+    this.estudiantes.push(estudiante);
   }
 }

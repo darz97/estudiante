@@ -2,26 +2,39 @@
     <div class="col-xs-12">
         <h3>{{titulo}}</h3>
     </div>
+    <div class="container">
+        <h1>En esta sección puedes agregar las notas de los estudiantes. </h1>
+        <app-formulario (estudianteCreada)="onEstudianteAgregada($event)">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Código</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nota</th>
-                <th scope="col">Observación</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let estudiante of estudiantes" [ngStyle]="{'background-color':estudiante.nota < 3  ? 'red' : 'white' }">
-                <td>{{estudiante.codigo}}</td>
-                <td>{{estudiante.nombre}}</td>
-                <td>{{estudiante.apellido}}</td>
-                <td>{{estudiante.nota}}</td>
-                <td *ngIf="validarNota(estudiante.nota)"> {{observacion}} </td>
-            </tr>
+        </app-formulario>
 
-        </tbody>
-    </table>
+    </div>
+
+    <div class="container">
+
+        <h1>Las notas de los estudiantes son: </h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Nota</th>
+                    <th scope="col">Observación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let estudiante of estudiantes" [ngStyle]="{'background-color':estudiante.nota < 3  ? 'red' : 'white' }">
+                    <td>{{estudiante.codigo}}</td>
+                    <td>{{estudiante.nombre}}</td>
+                    <td>{{estudiante.apellido}}</td>
+                    <td>{{estudiante.nota}}</td>
+                    <td *ngIf="validarNota(estudiante.nota)"> {{observacion}} </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
 </div>
