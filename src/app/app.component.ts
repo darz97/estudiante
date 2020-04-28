@@ -7,28 +7,30 @@ import { Estudiante } from './estudiante';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+
   titulo = 'Bienvenido, esta son las notas del estudiante: ';
-  nota = number;
-  estudiantes: Estudiante [ ] = [ new Estudiante (1, ' Diego', ' Ramirez', 3.5),
-  new Estudiante (1, ' Diego', ' Ramirez', 2.5), new Estudiante (1, ' Diego', ' Ramirez', 5)];
 
-  estudiante: Estudiante;
+  estudiantes: Estudiante [ ] = [
+    { codigo: 1, nombre: 'Diego' , apellido: 'Ramirez', nota: 5},
+    { codigo: 2, nombre: 'Diego' , apellido: 'Ramirez', nota: 4.5},
+    { codigo: 3, nombre: 'Diego' , apellido: 'Ramirez', nota: 3.5},
+    { codigo: 4, nombre: 'Diego' , apellido: 'Ramirez', nota: 3.0},
+    { codigo: 5, nombre: 'Diego' , apellido: 'Ramirez', nota: 4.0},
+    { codigo: 6, nombre: 'Diego' , apellido: 'Ramirez', nota: 2.5},
+    { codigo: 7, nombre: 'Diego' , apellido: 'Ramirez', nota: 2.0},
+  ];
 
-  observacion = 'hola';
 
 
-  validarNota():boolean{
-      if(this.nota <3){
-        this.observacion = 'perdio';
-        return false;
+  observacion: string;
 
-      }else{
-        this.observacion ='gano';
-
-        return true;
+  validarNota(nota: number): string {
+      if ( nota < 3) {
+        return  this.observacion = 'Reprobo';
+      } else {
+        return this.observacion = 'Aprobo';
       }
 
   }
-
-
 }

@@ -3,7 +3,7 @@
         <h3>{{titulo}}</h3>
     </div>
 
-    <table *ngIf="validarNota()" class="table">
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col">Código</th>
@@ -14,12 +14,12 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let estudiante of estudiantes">
+            <tr *ngFor="let estudiante of estudiantes" [ngStyle]="{'background-color':estudiante.nota < 3  ? 'red' : 'white' }">
                 <td>{{estudiante.codigo}}</td>
                 <td>{{estudiante.nombre}}</td>
                 <td>{{estudiante.apellido}}</td>
                 <td>{{estudiante.nota}}</td>
-                <td> {{observacion}} </td>
+                <td *ngIf="validarNota(estudiante.nota)"> {{observacion}} </td>
             </tr>
 
         </tbody>
