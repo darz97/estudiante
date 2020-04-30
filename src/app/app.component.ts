@@ -20,7 +20,7 @@ export class AppComponent {
     { codigo: 6, nombre: 'Diego' , apellido: 'Ramirez', nota: 2.5},
     { codigo: 7, nombre: 'Diego' , apellido: 'Ramirez', nota: 2.0},
   ];
-
+  fecha: Date = new Date();
 
 
   observacion: string;
@@ -37,4 +37,5 @@ export class AppComponent {
 
     this.estudiantes.push(estudiante);
   }
+
 }
